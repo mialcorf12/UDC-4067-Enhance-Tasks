@@ -2,7 +2,5 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Training_Goals__c</fullName>
     <label>Training Goals &amp; Expectations</label>
-    <type>LongTextArea</type>
-    <length>32768</length>
-    <visibleLines>6</visibleLines>
+    <type>TextArea</type>
 </CustomField>

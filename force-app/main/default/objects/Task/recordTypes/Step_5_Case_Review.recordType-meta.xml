@@ -2,7 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Step_5_Case_Review</fullName>
     <active>true</active>
-    <description>Completed by RSM post Basic Training</description>
+    <description>Completed by IS to capture Case Reviews</description>
     <label>Case Review</label>
     <picklistValues>
         <picklist>Addtional_Feature__c</picklist>

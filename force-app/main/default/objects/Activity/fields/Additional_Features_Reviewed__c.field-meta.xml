@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Features_Reviewed__c</fullName>
+    <label>Additional Features Reviewed</label>
+    <type>MultiselectPicklist</type>
+    <visibleLines>4</visibleLines>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Account Settings</fullName><label>Account Settings</label><default>false</default></value>
+            <value><fullName>SmartRx Forms</fullName><label>SmartRx Forms</label><default>false</default></value>
+            <value><fullName>Integrations</fullName><label>Integrations</label><default>false</default></value>
+            <value><fullName>Refinement</fullName><label>Refinement</label><default>false</default></value>
+            <value><fullName>IDB</fullName><label>IDB</label><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

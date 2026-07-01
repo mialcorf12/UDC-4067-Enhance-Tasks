@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduling_Options__c</fullName>
+    <label>Scheduling Options</label>
+    <type>MultiselectPicklist</type>
+    <visibleLines>4</visibleLines>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Schedule VIP Preference Review</fullName><label>Schedule VIP Preference Review</label><default>false</default></value>
+            <value><fullName>Schedule VIP Onboarding/Training</fullName><label>Schedule VIP Onboarding/Training</label><default>false</default></value>
+            <value><fullName>Schedule VIP Case Review</fullName><label>Schedule VIP Case Review</label><default>false</default></value>
+            <value><fullName>Schedule Training</fullName><label>Schedule Training</label><default>false</default></value>
+            <value><fullName>Schedule New Feature Training</fullName><label>Schedule New Feature Training</label><default>false</default></value>
+            <value><fullName>Schedule Case Review</fullName><label>Schedule Case Review</label><default>false</default></value>
+            <value><fullName>Schedule RSM Visit</fullName><label>Schedule RSM Visit</label><default>false</default></value>
+            <value><fullName>Team Educational Meeting</fullName><label>Team Educational Meeting</label><default>false</default></value>
+            <value><fullName>Schedule Check In</fullName><label>Schedule Check In</label><default>false</default></value>
+            <value><fullName>Other</fullName><label>Other</label><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Type__c</fullName>
+    <label>Engagement Type</label>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>14 day</fullName><label>14 day</label><default>false</default></value>
+            <value><fullName>30 day</fullName><label>30 day</label><default>false</default></value>
+            <value><fullName>60 day</fullName><label>60 day</label><default>false</default></value>
+            <value><fullName>90 day</fullName><label>90 day</label><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Version__c</fullName>
+    <label>Software Version</label>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>false</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Cloud</fullName><label>Cloud</label><default>false</default></value>
+            <value><fullName>Desktop</fullName><label>Desktop</label><default>false</default></value>
+            <value><fullName>uDesign 9.1</fullName><label>uDesign 9.1</label><default>false</default></value>
+            <value><fullName>Earlier version</fullName><label>Earlier version</label><default>false</default></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

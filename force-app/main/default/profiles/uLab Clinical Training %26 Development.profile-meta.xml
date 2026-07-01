@@ -340,6 +340,26 @@
         <layout>Task-Case Review</layout>
         <recordType>Task.Step_5_Case_Review</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-VIP Preference</layout>
+        <recordType>Task.VIP_Preference</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-VIP Training_Onboarding</layout>
+        <recordType>Task.VIP_Training_Onboarding</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-VIP Case Review</layout>
+        <recordType>Task.VIP_Case_Review</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-New Account Training</layout>
+        <recordType>Task.New_Account_Training</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-Existing Account Training</layout>
+        <recordType>Task.Existing_Account_Training</recordType>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Task.Aligner_Workflow_Plan</recordType>

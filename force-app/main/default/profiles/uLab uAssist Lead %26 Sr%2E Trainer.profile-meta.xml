@@ -340,6 +340,10 @@
         <layout>Task-Case Review</layout>
         <recordType>Task.Step_5_Case_Review</recordType>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>Task-Check in</layout>
+        <recordType>Task.Check_In</recordType>
+    </layoutAssignments>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Task.Aligner_Workflow_Plan</recordType>

@@ -19,6 +19,11 @@
             <value><fullName>30 day</fullName><label>30 day</label><default>false</default></value>
             <value><fullName>60 day</fullName><label>60 day</label><default>false</default></value>
             <value><fullName>90 day</fullName><label>90 day</label><default>false</default></value>
+            <value><fullName>Schedule VIP Preference Review</fullName><label>Schedule VIP Preference Review</label><default>false</default></value>
+            <value><fullName>Schedule VIP Onboarding/Training</fullName><label>Schedule VIP Onboarding/Training</label><default>false</default></value>
+            <value><fullName>Schedule VIP Case Review</fullName><label>Schedule VIP Case Review</label><default>false</default></value>
+            <value><fullName>Schedule Training</fullName><label>Schedule Training</label><default>false</default></value>
+            <value><fullName>Schedule New Feature Training</fullName><label>Schedule New Feature Training</label><default>false</default></value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

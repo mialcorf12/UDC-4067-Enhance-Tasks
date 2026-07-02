@@ -105,7 +105,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_Name__c</field>
+                <field>Patient_s_Name__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

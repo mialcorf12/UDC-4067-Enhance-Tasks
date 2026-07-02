@@ -81,7 +81,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Reminder_Set__c</field>
+                <field>IsReminderSet</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

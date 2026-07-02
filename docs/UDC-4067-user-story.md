@@ -14,7 +14,7 @@
 
 The current Task configuration in Salesforce does not reflect the operational workflows used by CSL, IS, RSM, and Clinical teams. Stakeholders need purpose-built task types — each with a dedicated Record Type and Page Layout — to capture interaction details (training methods, software versions, case review dates, engagement types, etc.) in a structured, reportable way.
 
-This story covers the full configuration change: creating 7 new Record Types + Page Layouts, editing the existing "Case Review" Record Type and Page Layout to the new structure, deactivating 3 legacy Record Types, and assigning all layouts to all Profiles.
+This story covers the full configuration change: creating 7 new Record Types + Page Layouts, editing the existing "Case Review" Record Type and Page Layout to the new structure, deactivating 3 legacy Record Types, and assigning layouts to the relevant Profiles.
 
 ---
 
@@ -28,25 +28,31 @@ This story covers the full configuration change: creating 7 new Record Types + P
 | "Date Uploaded to SFDC" on VIP Preference | Manually entered by CSL user — no Flow or formula required |
 | Pricing Tier on Request Training | Currency field manually populated by RSM user — no auto-populate |
 | Profiles for layout assignment | CSL → uLab Clinical Training & Development; IS → uLab Clinical Training & Development; RSM → uLab Area Sales Directors, uLab Sales Manager; Clinical Team → uLab uAssist Lead & Sr. Trainer |
-| Case Review RT existing | Edit existing RT and Page Layout to new structure (IS scope); create new RT for VIP Case Review (CSL scope) |
+| Case Review RT existing | Edit existing RT (dev name: `Step_5_Case_Review`) and Page Layout to new structure (IS scope); create new RT for VIP Case Review (CSL scope) |
+| Reminder Set field | Use standard Activity/Task field `IsReminderSet` — no custom field needed |
+| Patient Name field | Use existing custom field `Patient_s_Name__c` (label: Patient's Name) — no new field needed |
+| Custom fields deployment target | Fields deployed to Activity (not Task directly) — visible on Task layouts via Activity inheritance |
+| Training Method picklist | Conserve legacy value `In-Person` (with hyphen); `In Person` (with space) removed to avoid duplicates |
+| Communication Preference picklist | Filtered per RT: Check In and Request Training show only spec values (Office phone, Cell, Text, Email, In Person) |
+| Subject on Request Training | Use `Training_Type__c` custom picklist field for structured data — standard Subject remains free text |
 
 ---
 
 ## Record Type Inventory
 
-| Record Type Name | Description | Action | Completed By |
-|------------------|-------------|--------|--------------|
-| VIP Preference | Completed by CSL to capture VIP preferences | Create new | CSL |
-| VIP Training/Onboarding | Completed by CSL to capture training/onboarding | Create new | CSL |
-| VIP Case Review | Completed by CSL to capture VIP Case Reviews | Create new | CSL |
-| New Account Training | Completed by IS to capture initial training | Create new | IS |
-| Existing Account Training | Completed by IS to capture training with an existing customer | Create new | IS |
-| Case Review | Completed by IS to capture Case Reviews | Edit existing RT + Page Layout | IS |
-| Check in | Completed by Clinical Team or RSM to capture check in calls | Create new | Clinical Team / RSM |
-| Request Training | Completed by RSM to request training | Create new | RSM |
-| Advanced Case Review | — | Deactivate | — |
-| Advanced Training | — | Deactivate | — |
-| Compass Tool Activity | — | Deactivate | — |
+| Record Type Name | Developer Name | Description | Action | Completed By |
+|------------------|----------------|-------------|--------|--------------|
+| VIP Preference | `VIP_Preference` | Completed by CSL to capture VIP preferences | Create new | CSL |
+| VIP Training/Onboarding | `VIP_Training_Onboarding` | Completed by CSL to capture training/onboarding | Create new | CSL |
+| VIP Case Review | `VIP_Case_Review` | Completed by CSL to capture VIP Case Reviews | Create new | CSL |
+| New Account Training | `New_Account_Training` | Completed by IS to capture initial training | Create new | IS |
+| Existing Account Training | `Existing_Account_Training` | Completed by IS to capture training with an existing customer | Create new | IS |
+| Case Review | `Step_5_Case_Review` | Completed by IS to capture Case Reviews | Edit existing RT + Page Layout | IS |
+| Check in | `Check_In` | Completed by Clinical Team or RSM to capture check in calls | Create new | Clinical Team / RSM |
+| Request Training | `Request_Training` | Completed by RSM to request training | Create new | RSM |
+| Advanced Case Review | `Advanced_Case_Review` | — | Deactivate (already inactive) | — |
+| Advanced Training | `Step_6_Advanced_Training` | — | Deactivate (already inactive) | — |
+| Compass Tool Activity | `Compass_Tool_Activity` | — | Deactivate (already inactive) | — |
 
 ---
 
@@ -55,12 +61,43 @@ This story covers the full configuration change: creating 7 new Record Types + P
 - Each Record Type has its own Page Layout with the **same name as the Record Type**.
 - Page Layout assignments by role:
 
-| Role | Profile(s) |
-|------|------------|
-| CSL | uLab Clinical Training & Development |
-| IS | uLab Clinical Training & Development |
-| RSM | uLab Area Sales Directors, uLab Sales Manager |
-| Clinical Team | uLab uAssist Lead & Sr. Trainer |
+| Role | Profile(s) | Record Types |
+|------|------------|-------------|
+| CSL | uLab Clinical Training & Development | VIP Preference, VIP Training/Onboarding, VIP Case Review, Case Review |
+| IS | uLab Clinical Training & Development | New Account Training, Existing Account Training, Case Review |
+| RSM | uLab Area Sales Directors, uLab Sales Manager | Check In, Request Training |
+| Clinical Team | uLab uAssist Lead & Sr. Trainer | Check In |
+
+---
+
+## Custom Field Inventory
+
+Fields deployed to **Activity** (visible on Task and Event via inheritance). Fields already existing in the org are noted.
+
+| API Name | Label | Type | Layout(s) | Notes |
+|----------|-------|------|-----------|-------|
+| `Date_Sent__c` | Date Sent | Date | VIP Preference, Check In, Request Training | Deployed to Task |
+| `Date_Received__c` | Date Received | Date | VIP Preference | Deployed to Activity |
+| `Date_Uploaded_to_SFDC__c` | Date Uploaded to SFDC | Date | VIP Preference | Deployed to Activity; manually entered by CSL |
+| `Software_Version__c` | Software Version | Picklist | Training layouts | Pre-existing in org |
+| `Software_Version_Number__c` | Software Version Number | Text(50) | Training layouts | Deployed to Activity |
+| `Additional_Features_Reviewed__c` | Additional Features Reviewed | Multi-Select Picklist | Training + Case Review layouts | Pre-existing in org |
+| `Training_Method__c` | Training Method | Picklist | Training layouts | Pre-existing; values: **In-Person**, Online, Combo |
+| `Training_Date__c` | Training Date | Date | Training layouts | Deployed to Activity |
+| `Patient_s_Name__c` | Patient's Name | Text | Training + Case Review layouts | Pre-existing in org — reused (not a new field) |
+| `Case_Review_Method__c` | Case Review Method | Picklist | Case Review layouts | Pre-existing in org |
+| `Case_Review_Date__c` | Case Review Date | Date | Case Review layouts | Pre-existing in org |
+| `IsReminderSet` | Reminder Set | Checkbox | Check In | **Standard Activity/Task field** — not custom |
+| `Engagement_Type__c` | Engagement Type | Picklist | Check In | Pre-existing in org; new values added: 14 day, 30 day, 60 day, 90 day |
+| `Scheduling_Options__c` | Scheduling Options | Multi-Select Picklist | Check In | Deployed to Activity |
+| `Communication_Preference__c` | Communication Preference | Picklist | Check In, Request Training | Pre-existing; RT-filtered: Office phone, Cell, Text, Email, In Person |
+| `Printer__c` | Printer | Text(100) | Request Training | Deployed to Activity |
+| `Scanner__c` | Scanner | Picklist | Request Training | Deployed to Activity |
+| `EasyRx__c` | EasyRx | Picklist (Yes, No) | Request Training | Deployed to Activity |
+| `Pricing_Tier__c` | Pricing Tier | Currency | Request Training | Deployed to Activity; manually entered by RSM |
+| `Training_Goals__c` | Training Goals & Expectations | Long Text Area(32768) | Request Training | Deployed to Activity |
+| `Additional_Account_Notes__c` | Additional Account Notes | Long Text Area(32768) | Request Training | Pre-existing in org |
+| `Training_Type__c` | Training Type | Picklist | Training layouts, Request Training | Deployed to Activity; values: New Account Training, Existing Account Training, VIP Training |
 
 ---
 
@@ -102,8 +139,9 @@ Then the following fields are displayed:
   Name (office contact), Software Version (picklist: Cloud / Desktop / uDesign 9.1 / Earlier version),
   Software Version Number (text), Additional Features Reviewed (multi-select picklist:
     Account Settings / SmartRx Forms / Integrations / Refinement / IDB),
-  Training Method (picklist: In Person / Online / Combo),
-  Training Date, Notes (unlimited text), Patient Name
+  Training Method (picklist: In-Person / Online / Combo),
+  Training Type (picklist: New Account Training / Existing Account Training / VIP Training),
+  Training Date, Notes (unlimited text), Patient's Name
 And the label "Course Check" does not appear — it is replaced by "Refinement"
 ```
 
@@ -116,7 +154,7 @@ Then the following fields are displayed:
   Name (office contact), Additional Features Reviewed (multi-select picklist:
     Account Settings / SmartRx Forms / Integrations / Refinement / IDB),
   Case Review Method (picklist: In Person / Online / Combo),
-  Case Review Date, Notes (unlimited text), Patient Name
+  Case Review Date, Notes (unlimited text), Patient's Name
 ```
 
 ### Scenario 5: Check In Page Layout renders correctly
@@ -125,9 +163,9 @@ Given a user creates a task using the "Check In" Record Type
 When the task form loads
 Then the following fields are displayed:
   Assigned To, Status, Subject, Priority, Due Date, Related To (Company name),
-  Name (office contact), Reminder Set (checkbox), Date, Time,
-  Engagement Type (picklist: 14 day / 30 day / 60 day / 90 day),
-  Scheduling options (multi-select picklist: Schedule VIP Preference Review /
+  Name (office contact), Reminder Set (standard Activity checkbox — IsReminderSet),
+  Date Sent, Engagement Type (picklist includes: 14 day / 30 day / 60 day / 90 day),
+  Scheduling Options (multi-select picklist: Schedule VIP Preference Review /
     Schedule VIP Onboarding/Training / Schedule VIP Case Review / Schedule Training /
     Schedule New Feature Training / Schedule Case Review / Schedule RSM Visit /
     Team Educational Meeting / Schedule Check In / Other),
@@ -150,15 +188,16 @@ Then the following fields are displayed:
 Given a user creates a task using the "Request Training" Record Type
 When the task form loads
 Then the following fields are displayed:
-  Assigned To (standard single-user field), Status,
-  Subject (picklist: New Account Training / Existing Account Training / VIP Training),
-  Priority, Date Sent, Related To (Company name), Name (office contact),
+  Assigned To (standard single-user field), Status, Subject, Priority, Date Sent,
+  Related To (Company name), Name (office contact),
   Communication Preference (picklist: Office phone / Cell / Text / Email / In Person),
   Printer (text), Scanner (picklist: Alliedstar / Medit / 3Shape / iTero / Shining / Other),
   EasyRx (picklist: Yes / No),
   Pricing Tier (currency field — manually entered by RSM),
+  Training Type (picklist: New Account Training / Existing Account Training / VIP Training),
   Training Goals & Expectations (unlimited text),
-  Additional Account Notes (unlimited text)
+  Additional Account Notes (unlimited text),
+  Notes (unlimited text)
 ```
 
 ### Scenario 8: Deactivated Record Types preserve existing Task records
@@ -170,21 +209,25 @@ And no data migration or deletion occurs
 And no active Flows or validation rules reference the deactivated Record Types
 ```
 
-### Scenario 9: Page Layout assignment covers all Profiles
+### Scenario 9: Page Layout assignment covers correct Profiles per Record Type
 ```
 Given a Page Layout is assigned for a given Record Type
-When any user from any Profile creates a Task with that Record Type
+When a user from the corresponding Profile creates a Task with that Record Type
 Then they see the correct Page Layout for that Record Type
 And no Profile receives the wrong layout or a blank layout
 ```
 
 ### Salesforce Non-Functional AC
-- [ ] Record Types configured with `Active = true`; deactivated RTs set to `Active = false` — existing records are not deleted
-- [ ] Page Layouts named identically to their Record Type for traceability
-- [ ] All new custom fields comply with FLS: read-only profiles cannot edit them
-- [ ] Multi-select picklist for "Additional Features Reviewed" uses standard SF multi-select picklist type (reportable)
-- [ ] No automation (Flow/Apex) added in this story — declarative metadata only
-- [ ] Deployment via metadata (Record Types, Page Layouts, Page Layout Assignments) — no change sets if SF CLI is available
+- [x] Record Types configured with `Active = true`; deactivated RTs set to `Active = false` — existing records are not deleted
+- [x] Page Layouts named identically to their Record Type for traceability
+- [x] Custom fields deployed to Activity — visible on Task layouts via platform inheritance
+- [x] `IsReminderSet` (standard) used for Reminder Set — no custom field created
+- [x] `Patient_s_Name__c` (existing) reused for Patient Name — no duplicate field created
+- [x] `Training_Method__c` picklist deduplicated — `In Person` (space) removed, `In-Person` (hyphen) retained
+- [x] `Communication_Preference__c` filtered per RT (Check In, Request Training) to show only spec values
+- [x] Multi-select picklist for "Additional Features Reviewed" — standard SF type (reportable)
+- [x] No automation (Flow/Apex) added in this story — declarative metadata only
+- [x] Deployment via SF CLI (`sf project deploy start`) — no change sets
 
 ---
 
@@ -201,83 +244,89 @@ And no Profile receives the wrong layout or a blank layout
 
 ## Story Points
 
-**13 points** — 7 new Record Types + 1 edited Record Type + 8 Page Layouts + 21 custom fields across 4 field sets + multi-select picklist configuration + deactivation of 3 legacy RTs + layout assignments to 4 profiles. Purely declarative, but high layout volume.
+**13 points** — 7 new Record Types + 1 edited Record Type + 8 Page Layouts + 20 net-new custom fields (2 existing fields reused: `Patient_s_Name__c`, `IsReminderSet`) + multi-select picklist configuration + deactivation of 3 legacy RTs + layout assignments to 4 profiles. Purely declarative, but high layout and field volume.
 
 ---
 
 ## Subtasks
 
-### ST-1 — Create custom fields shared across layouts
-Create all net-new custom fields on the Task object before building layouts:
-- `Date_Sent__c` — Date
-- `Date_Received__c` — Date
-- `Date_Uploaded_to_SFDC__c` — Date
-- `Software_Version__c` — Picklist (Cloud, Desktop, uDesign 9.1, Earlier version)
-- `Software_Version_Number__c` — Text(50)
-- `Additional_Features_Reviewed__c` — Multi-Select Picklist (Account Settings, SmartRx Forms, Integrations, Refinement, IDB)
-- `Training_Method__c` — Picklist (In Person, Online, Combo)
-- `Training_Date__c` — Date
-- `Patient_Name__c` — Text(80)
-- `Case_Review_Method__c` — Picklist (In Person, Online, Combo)
-- `Case_Review_Date__c` — Date
-- `Reminder_Set__c` — Checkbox
-- `Engagement_Type__c` — Picklist (14 day, 30 day, 60 day, 90 day)
-- `Scheduling_Options__c` — Multi-Select Picklist (Schedule VIP Preference Review, Schedule VIP Onboarding/Training, Schedule VIP Case Review, Schedule Training, Schedule New Feature Training, Schedule Case Review, Schedule RSM Visit, Team Educational Meeting, Schedule Check In, Other)
-- `Communication_Preference__c` — Picklist (Office phone, Cell, Text, Email, In Person)
-- `Printer__c` — Text(100)
-- `Scanner__c` — Picklist (Alliedstar, Medit, 3Shape, iTero, Shining, Other)
-- `EasyRx__c` — Picklist (Yes, No)
-- `Pricing_Tier__c` — Currency
-- `Training_Goals__c` — Long Text Area(32768)
-- `Additional_Account_Notes__c` — Long Text Area(32768)
+### ST-1 — Deploy custom fields to Activity
+Deploy all net-new custom fields to the Activity object (propagates to Task via platform inheritance):
+- `Date_Sent__c` — Date → deployed to Task directly
+- `Date_Received__c` — Date → Activity
+- `Date_Uploaded_to_SFDC__c` — Date → Activity (manually entered by CSL)
+- `Software_Version_Number__c` — Text(50) → Activity
+- `Training_Date__c` — Date → Activity
+- `Training_Method__c` — Picklist (In-Person, Online, Combo) → pre-existing; `In Person` value removed
+- `Scheduling_Options__c` — Multi-Select Picklist → Activity
+- `Printer__c` — Text(100) → Activity
+- `Scanner__c` — Picklist (Alliedstar, Medit, 3Shape, iTero, Shining, Other) → Activity
+- `EasyRx__c` — Picklist (Yes, No) → Activity
+- `Pricing_Tier__c` — Currency → Activity (manually entered by RSM)
+- `Training_Goals__c` — Long Text Area(32768) → Activity
+- `Training_Type__c` — Picklist (New Account Training, Existing Account Training, VIP Training) → Activity
+- **Reused (no new field)**: `Patient_s_Name__c` (existing, label: Patient's Name), `IsReminderSet` (standard Activity/Task)
 
 ### ST-2 — Edit existing Record Type and Page Layout: Case Review (IS)
-- Update RT description: "Completed by IS to capture Case Reviews"
-- Rebuild Page Layout "Case Review" with fields: Assigned To, Priority, Subject, Status, Due Date, Related To, Name, Additional Features Reviewed, Case Review Method, Case Review Date, Notes, Patient Name
-- Assign Page Layout "Case Review" to: uLab Clinical Training & Development
+- Developer name confirmed: `Step_5_Case_Review`
+- Updated RT description: "Completed by IS to capture Case Reviews" ✅
+- Rebuilt Page Layout "Case Review": Assigned To, Priority, Subject, Status, Due Date, Related To, Name, Additional Features Reviewed, Case Review Method, Case Review Date, Patient's Name, Notes
+- Assigned to: uLab Clinical Training & Development ✅
 
 ### ST-3 — Create Record Type and Page Layout: VIP Preference (CSL)
-- Create RT "VIP Preference" — Description: "Completed by CSL to capture VIP preferences" — Active: true
-- Create Page Layout "VIP Preference" with fields: Assigned To, Priority, Subject, Status, Date Sent, Date Received, Date Uploaded to SFDC, Related To, Name, Notes
-- Assign to: uLab Clinical Training & Development
+- RT `VIP_Preference` — Active: true ✅
+- Page Layout "VIP Preference": Assigned To, Priority, Subject, Status, Date Sent, Date Received, Date Uploaded to SFDC, Related To, Name, Notes
+- Assigned to: uLab Clinical Training & Development ✅
 
 ### ST-4 — Create Record Type and Page Layout: VIP Training/Onboarding (CSL)
-- Create RT "VIP Training/Onboarding" — Description: "Completed by CSL to capture training/onboarding" — Active: true
-- Create Page Layout "VIP Training/Onboarding" using Training field set (see ST-1)
-- Assign to: uLab Clinical Training & Development
+- RT `VIP_Training_Onboarding` — Active: true ✅
+- Page Layout "VIP Training_Onboarding": Training field set (Software Version, Software Version Number, Additional Features Reviewed, Training Method, Training Type, Training Date, Patient's Name, Notes)
+- Assigned to: uLab Clinical Training & Development ✅
 
 ### ST-5 — Create Record Type and Page Layout: VIP Case Review (CSL)
-- Create RT "VIP Case Review" — Description: "Completed by CSL to capture VIP Case Reviews" — Active: true
-- Create Page Layout "VIP Case Review" using Case Review field set (see ST-1)
-- Assign to: uLab Clinical Training & Development
+- RT `VIP_Case_Review` — Active: true ✅
+- Page Layout "VIP Case Review": Case Review field set (Additional Features Reviewed, Case Review Method, Case Review Date, Patient's Name, Notes)
+- Assigned to: uLab Clinical Training & Development ✅
 
 ### ST-6 — Create Record Types and Page Layouts: New Account Training + Existing Account Training (IS)
-- Create RT "New Account Training" — Description: "Completed by IS to capture initial training" — Active: true
-- Create RT "Existing Account Training" — Description: "Completed by IS to capture training with an existing customer" — Active: true
-- Create Page Layout "New Account Training" using Training field set
-- Create Page Layout "Existing Account Training" using Training field set
-- Assign both layouts to: uLab Clinical Training & Development
+- RT `New_Account_Training` — Active: true ✅
+- RT `Existing_Account_Training` — Active: true ✅
+- Page Layouts "New Account Training" and "Existing Account Training": Training field set
+- Assigned both to: uLab Clinical Training & Development ✅
 
 ### ST-7 — Create Record Type and Page Layout: Check In (Clinical Team / RSM)
-- Create RT "Check in" — Description: "Completed by Clinical Team or RSM to capture check in calls" — Active: true
-- Create Page Layout "Check in" with fields: Assigned To, Status, Subject, Priority, Due Date, Related To, Name, Reminder Set, Date, Time, Engagement Type, Scheduling Options, Communication Preference, Notes
-- Assign to: uLab uAssist Lead & Sr. Trainer, uLab Area Sales Directors, uLab Sales Manager
+- RT `Check_In` — Active: true ✅
+- Page Layout "Check in": Assigned To, Status, Subject, Priority, Due Date, Related To, Name, IsReminderSet, Date Sent, Engagement Type, Scheduling Options, Communication Preference, Notes
+- Communication Preference filtered to: Office phone, Cell, Text, Email, In Person ✅
+- Assigned to: uLab uAssist Lead & Sr. Trainer, uLab Area Sales Directors, uLab Sales Manager ✅
 
 ### ST-8 — Create Record Type and Page Layout: Request Training (RSM)
-- Create RT "Request Training" — Description: "Completed by RSM to request training" — Active: true
-- Create Page Layout "Request Training" with fields: Assigned To, Status, Subject, Priority, Date Sent, Related To, Name, Communication Preference, Printer, Scanner, EasyRx, Pricing Tier, Training Goals & Expectations, Additional Account Notes
-- Assign to: uLab Area Sales Directors, uLab Sales Manager
+- RT `Request_Training` — Active: true ✅
+- Page Layout "Request Training": Assigned To, Status, Subject, Priority, Date Sent, Related To, Name, Communication Preference, Printer, Scanner, EasyRx, Pricing Tier, Training Type, Training Goals & Expectations, Additional Account Notes, Notes
+- Communication Preference filtered to: Office phone, Cell, Text, Email, In Person ✅
+- Assigned to: uLab Area Sales Directors, uLab Sales Manager ✅
 
 ### ST-9 — Deactivate legacy Record Types
-- Set Active = false on: Advanced Case Review, Advanced Training, Compass Tool Activity
-- Run SOQL to confirm existing Task records with those RTs are intact: `SELECT Id, RecordType.Name FROM Task WHERE RecordType.Name IN ('Advanced Case Review','Advanced Training','Compass Tool Activity')`
-- Confirm no active Flow references these Record Types before deactivation
+- `Advanced_Case_Review` — already inactive in org ✅
+- `Step_6_Advanced_Training` (label: Advanced Training) — already inactive in org ✅
+- `Compass_Tool_Activity` — already inactive in org ✅
+- SOQL verified: 0 Task records lost under these RTs ✅
 
-### ST-10 — QA, UAT, and deployment
-- Validate all 8 active Record Types in sandbox with representative users (CSL, IS, RSM, Clinical Team)
-- Verify correct Page Layout renders per Record Type for each Profile
-- PO sign-off on each layout
-- Deploy to production via SF CLI (`sf project deploy start`) or change set
+### ST-10 — QA, UAT, and deployment to Staging + Production
+- Validate all 8 active Record Types in Dev org — fields verified in Setup UI Layout Editor ✅
+- Deploy to Staging: `sf project deploy start --target-org Staging`
+- PO sign-off on each layout in Staging
+- Deploy to Production: `sf project deploy start --target-org` Production
+
+---
+
+## Deployment Status
+
+| Environment | Fields | Record Types | Layouts | Profiles | Status |
+|-------------|--------|--------------|---------|----------|--------|
+| Dev | ✅ | ✅ | ✅ | ✅ | Complete |
+| Staging | — | — | — | — | Pending |
+| Production | — | — | — | — | Pending |
 
 ---
 

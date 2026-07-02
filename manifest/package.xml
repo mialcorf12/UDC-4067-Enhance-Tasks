@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Activity.Additional_Account_Notes__c</members>
+        <members>Activity.Additional_Features_Reviewed__c</members>
+        <members>Activity.Case_Review_Date__c</members>
+        <members>Activity.Case_Review_Method__c</members>
+        <members>Activity.Communication_Preference__c</members>
+        <members>Activity.Date_Received__c</members>
+        <members>Activity.Date_Sent__c</members>
+        <members>Activity.Date_Uploaded_to_SFDC__c</members>
+        <members>Activity.EasyRx__c</members>
+        <members>Activity.Engagement_Type__c</members>
+        <members>Activity.Pricing_Tier__c</members>
+        <members>Activity.Printer__c</members>
+        <members>Activity.Scanner__c</members>
+        <members>Activity.Scheduling_Options__c</members>
+        <members>Activity.Software_Version_Number__c</members>
+        <members>Activity.Software_Version__c</members>
+        <members>Activity.Training_Date__c</members>
+        <members>Activity.Training_Goals__c</members>
+        <members>Activity.Training_Method__c</members>
+        <members>Activity.Training_Type__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Task-Case Review</members>
+        <members>Task-Check in</members>
+        <members>Task-Existing Account Training</members>
+        <members>Task-New Account Training</members>
+        <members>Task-Request Training</members>
+        <members>Task-VIP Case Review</members>
+        <members>Task-VIP Preference</members>
+        <members>Task-VIP Training_Onboarding</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>uLab Area Sales Directors</members>
+        <members>uLab Clinical Training &amp; Development</members>
+        <members>uLab Sales Manager</members>
+        <members>uLab uAssist Lead &amp; Sr. Trainer</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Task.Advanced_Case_Review</members>
+        <members>Task.Check_In</members>
+        <members>Task.Compass_Tool_Activity</members>
+        <members>Task.Existing_Account_Training</members>
+        <members>Task.New_Account_Training</members>
+        <members>Task.Request_Training</members>
+        <members>Task.Step_5_Case_Review</members>
+        <members>Task.Step_6_Advanced_Training</members>
+        <members>Task.VIP_Case_Review</members>
+        <members>Task.VIP_Preference</members>
+        <members>Task.VIP_Training_Onboarding</members>
+        <name>RecordType</name>
+    </types>
     <version>66.0</version>
 </Package>

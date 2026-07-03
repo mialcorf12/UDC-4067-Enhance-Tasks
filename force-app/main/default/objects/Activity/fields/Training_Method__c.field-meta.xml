@@ -2,14 +2,27 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Training_Method__c</fullName>
     <label>Training Method</label>
+    <required>false</required>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>In-Person</fullName><label>In-Person</label><default>false</default></value>
-            <value><fullName>Online</fullName><label>Online</label><default>false</default></value>
-            <value><fullName>Combo</fullName><label>Combo</label><default>false</default></value>
+            <value>
+                <fullName>In-Person</fullName>
+                <default>false</default>
+                <label>In-Person</label>
+            </value>
+            <value>
+                <fullName>Online</fullName>
+                <default>false</default>
+                <label>Online</label>
+            </value>
+            <value>
+                <fullName>Combo</fullName>
+                <default>false</default>
+                <label>Combo</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

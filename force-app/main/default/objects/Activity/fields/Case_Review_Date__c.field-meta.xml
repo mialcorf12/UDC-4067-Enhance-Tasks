@@ -2,5 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Case_Review_Date__c</fullName>
     <label>Case Review Date</label>
+    <required>false</required>
     <type>Date</type>
 </CustomField>

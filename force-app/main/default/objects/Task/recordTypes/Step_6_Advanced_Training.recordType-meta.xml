@@ -32,67 +32,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Aligner_Manufacturing_Preference__c</picklist>
-        <values>
-            <fullName>In Office Aligners ONLY</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uSmile Clear Aligners %2B In Office Aligners</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uSmile Clear Aligners ONLY</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Attendees__c</picklist>
-        <values>
-            <fullName>Digital Assistant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Front Desk</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Office Manager</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Orthodontist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Treatment Coordinator</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Cancellation_Reason__c</picklist>
-        <values>
-            <fullName>Anomalies Along Tooth Margins</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Extensive Undercutting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Holes%2FCavities%2FGum missing</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Overall Quality of Scan</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Trimline</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Communication_Preference__c</picklist>
         <values>
             <fullName>Carrier Pigeon</fullName>
@@ -147,55 +86,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Expected_Outcome__c</picklist>
-        <values>
-            <fullName>Customer Will Not Add CC on %2ENet</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Customer Will Update Card within 3 days</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Customer Wishes to Suspend Their Account</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Next_Steps__c</picklist>
-        <values>
-            <fullName>Continue to Follow up</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Schedule Additional Training</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Schedule Meeting with RSM</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Outcome_of_TimeTap_Event__c</picklist>
-        <values>
-            <fullName>Interested</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Maybe</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No Show%2FCancelled</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Not Interested</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Priority</picklist>
         <values>
             <fullName>High</fullName>
@@ -204,37 +94,6 @@
         <values>
             <fullName>Normal</fullName>
             <default>true</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Results__c</picklist>
-        <values>
-            <fullName>Not interested</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ordered uSmile aligners</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Re-trained</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Reviewed cases</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Schedule advanced training</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Schedule future appointment</fullName>
-            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
@@ -335,33 +194,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Title_Position__c</picklist>
-        <values>
-            <fullName>Digital Assistant</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Lab Technician</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Orthodontist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Staff Technician</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Treatment Coordinator</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Training_Method__c</picklist>
         <values>
             <fullName>Combo</fullName>
@@ -388,21 +220,6 @@
         </values>
         <values>
             <fullName>Other</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Workflow_Preference__c</picklist>
-        <values>
-            <fullName>Self-Planning ONLY</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uAssist %2B Self-Planning</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uAssist ONLY</fullName>
             <default>false</default>
         </values>
     </picklistValues>

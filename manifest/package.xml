@@ -2,7 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>Activity.Additional_Account_Notes__c</members>
-        <members>Activity.Additional_Features_Reviewed__c</members>
+        <members>Activity.Addtional_Feature__c</members>
         <members>Activity.Case_Review_Date__c</members>
         <members>Activity.Case_Review_Method__c</members>
         <members>Activity.Communication_Preference__c</members>
@@ -55,5 +55,5 @@
         <members>Task.VIP_Training_Onboarding</members>
         <name>RecordType</name>
     </types>
-    <version>66.0</version>
+    <version>67.0</version>
 </Package>

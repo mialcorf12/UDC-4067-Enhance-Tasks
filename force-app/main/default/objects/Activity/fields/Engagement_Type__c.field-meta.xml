@@ -2,28 +2,97 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Engagement_Type__c</fullName>
     <label>Engagement Type</label>
+    <required>false</required>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>Re-Training</fullName><label>Re-Training</label><default>false</default></value>
-            <value><fullName>Case review</fullName><label>Case review</label><default>false</default></value>
-            <value><fullName>Schedule Initial Training</fullName><label>Schedule Initial Training</label><default>false</default></value>
-            <value><fullName>Schedule Advanced Training</fullName><label>Schedule Advanced Training</label><default>false</default></value>
-            <value><fullName>Schedule RSM Visit</fullName><label>Schedule RSM Visit</label><default>false</default></value>
-            <value><fullName>Team Education Meeting</fullName><label>Team Education Meeting</label><default>false</default></value>
-            <value><fullName>Check-in</fullName><label>Check-in</label><default>false</default></value>
-            <value><fullName>Other</fullName><label>Other</label><default>false</default></value>
-            <value><fullName>14 day</fullName><label>14 day</label><default>false</default></value>
-            <value><fullName>30 day</fullName><label>30 day</label><default>false</default></value>
-            <value><fullName>60 day</fullName><label>60 day</label><default>false</default></value>
-            <value><fullName>90 day</fullName><label>90 day</label><default>false</default></value>
-            <value><fullName>Schedule VIP Preference Review</fullName><label>Schedule VIP Preference Review</label><default>false</default></value>
-            <value><fullName>Schedule VIP Onboarding/Training</fullName><label>Schedule VIP Onboarding/Training</label><default>false</default></value>
-            <value><fullName>Schedule VIP Case Review</fullName><label>Schedule VIP Case Review</label><default>false</default></value>
-            <value><fullName>Schedule Training</fullName><label>Schedule Training</label><default>false</default></value>
-            <value><fullName>Schedule New Feature Training</fullName><label>Schedule New Feature Training</label><default>false</default></value>
+            <value>
+                <fullName>Re-Training</fullName>
+                <default>false</default>
+                <label>Re-Training</label>
+            </value>
+            <value>
+                <fullName>Case review</fullName>
+                <default>false</default>
+                <label>Case review</label>
+            </value>
+            <value>
+                <fullName>Schedule Initial Training</fullName>
+                <default>false</default>
+                <label>Schedule Initial Training</label>
+            </value>
+            <value>
+                <fullName>Schedule Advanced Training</fullName>
+                <default>false</default>
+                <label>Schedule Advanced Training</label>
+            </value>
+            <value>
+                <fullName>Schedule RSM Visit</fullName>
+                <default>false</default>
+                <label>Schedule RSM Visit</label>
+            </value>
+            <value>
+                <fullName>Team Education Meeting</fullName>
+                <default>false</default>
+                <label>Team Education Meeting</label>
+            </value>
+            <value>
+                <fullName>Check-in</fullName>
+                <default>false</default>
+                <label>Check-in</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+			<value>
+                <fullName>14 day</fullName>
+                <default>false</default>
+                <label>14 day</label>
+            </value>
+            <value>
+                <fullName>30 day</fullName>
+                <default>false</default>
+                <label>30 day</label>
+            </value>
+            <value>
+                <fullName>60 day</fullName>
+                <default>false</default>
+                <label>60 day</label>
+            </value>
+			<value>
+                <fullName>90 day</fullName>
+                <default>false</default>
+                <label>90 day</label>
+            </value>
+            <value>
+                <fullName>Schedule VIP Preference Review</fullName>
+                <default>false</default>
+                <label>Schedule VIP Preference Review</label>
+            </value>
+            <value>
+                <fullName>Schedule VIP Onboarding/Training</fullName>
+                <default>false</default>
+                <label>Schedule VIP Onboarding/Training</label>
+            </value>
+            <value>
+                <fullName>Schedule VIP Case Review</fullName>
+                <default>false</default>
+                <label>Schedule VIP Case Review</label>
+            </value>
+            <value>
+                <fullName>Schedule Training</fullName>
+                <default>false</default>
+                <label>Schedule Training</label>
+            </value>
+            <value>
+                <fullName>Schedule New Feature Training</fullName>
+                <default>false</default>
+                <label>Schedule New Feature Training</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

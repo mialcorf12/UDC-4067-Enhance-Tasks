@@ -7,27 +7,23 @@
     <picklistValues>
         <picklist>Addtional_Feature__c</picklist>
         <values>
-            <fullName>Course Check</fullName>
+            <fullName>Account Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartRx Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinement</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>IDB</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uAssist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uAssist Case Review</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uAssist First Case</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>uSmile Order Placed</fullName>
             <default>false</default>
         </values>
     </picklistValues>

@@ -73,7 +73,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Additional_Features_Reviewed__c</field>
+                <field>Addtional_Feature__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>

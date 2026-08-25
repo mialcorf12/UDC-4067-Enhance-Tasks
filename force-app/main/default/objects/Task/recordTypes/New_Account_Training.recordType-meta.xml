@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Account_Training</fullName>
+    <active>true</active>
+    <description>Completed by IS to capture initial training</description>
+    <label>New Account Training</label>
+    <picklistValues>
+        <picklist>Addtional_Feature__c</picklist>
+        <values>
+            <fullName>Account Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartRx Forms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

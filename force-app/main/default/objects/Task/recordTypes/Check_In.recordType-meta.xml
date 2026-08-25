@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_In</fullName>
+    <active>true</active>
+    <description>Completed by Clinical Team or RSM to capture check in calls</description>
+    <label>Check in</label>
+    <picklistValues>
+        <picklist>Communication_Preference__c</picklist>
+        <values>
+            <fullName>Office phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Text</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

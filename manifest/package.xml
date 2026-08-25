@@ -34,13 +34,14 @@
         <members>Task-VIP Training_Onboarding</members>
         <name>Layout</name>
     </types>
-    <!-- <types>
+    <types>
+        <members>Admin</members>
         <members>uLab Area Sales Directors</members>
         <members>uLab Clinical Training &amp; Development</members>
         <members>uLab Sales Manager</members>
         <members>uLab uAssist Lead &amp; Sr. Trainer</members>
         <name>Profile</name>
-    </types> -->
+    </types>
     <types>
         <members>Task.Advanced_Case_Review</members>
         <members>Task.Check_In</members>

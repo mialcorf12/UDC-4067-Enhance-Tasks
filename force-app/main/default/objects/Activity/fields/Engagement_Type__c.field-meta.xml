@@ -48,7 +48,7 @@
                 <default>false</default>
                 <label>Other</label>
             </value>
-			<value>
+            <value>
                 <fullName>14 day</fullName>
                 <default>false</default>
                 <label>14 day</label>
@@ -63,7 +63,7 @@
                 <default>false</default>
                 <label>60 day</label>
             </value>
-			<value>
+            <value>
                 <fullName>90 day</fullName>
                 <default>false</default>
                 <label>90 day</label>

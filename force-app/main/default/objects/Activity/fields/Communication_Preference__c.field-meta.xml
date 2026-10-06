@@ -33,7 +33,7 @@
                 <default>false</default>
                 <label>Carrier Pigeon</label>
             </value>
-			<value>
+            <value>
                 <fullName>Office phone</fullName>
                 <default>false</default>
                 <label>Office phone</label>

@@ -13,8 +13,19 @@
             <fullName>IDB</fullName>
             <default>false</default>
         </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Review_Method__c</picklist>
         <values>
-            <fullName>uAssist</fullName>
+            <fullName>Combo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -38,6 +49,17 @@
         </values>
         <values>
             <fullName>Text</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EasyRx__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -85,6 +107,76 @@
         <values>
             <fullName>Normal</fullName>
             <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scanner__c</picklist>
+        <values>
+            <fullName>3Shape</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alliedstar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iTero</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scheduling_Options__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Case Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Check In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule New Feature Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule RSM Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Case Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Onboarding%2FTraining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Preference Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Educational Meeting</fullName>
+            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
@@ -196,6 +288,21 @@
         </values>
         <values>
             <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Type__c</picklist>
+        <values>
+            <fullName>Existing Account Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Account Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Training</fullName>
             <default>false</default>
         </values>
     </picklistValues>

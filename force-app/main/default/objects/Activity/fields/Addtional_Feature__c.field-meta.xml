@@ -7,16 +7,11 @@
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
-            <sorted>false</sorted>
+            <sorted>true</sorted>
             <value>
-                <fullName>IDB</fullName>
+                <fullName>Account Settings</fullName>
                 <default>false</default>
-                <label>IDB</label>
-            </value>
-            <value>
-                <fullName>uAssist</fullName>
-                <default>false</default>
-                <label>uAssist</label>
+                <label>Account Settings</label>
             </value>
             <value>
                 <fullName>Course Check</fullName>
@@ -24,29 +19,19 @@
                 <label>Course Check</label>
             </value>
             <value>
-                <fullName>uAssist First Case</fullName>
+                <fullName>Desktop</fullName>
                 <default>false</default>
-                <label>uAssist First Case</label>
+                <label>Desktop</label>
             </value>
             <value>
-                <fullName>uAssist Case Review</fullName>
+                <fullName>Exporting</fullName>
                 <default>false</default>
-                <label>uAssist Case Review</label>
+                <label>Exporting</label>
             </value>
             <value>
-                <fullName>uSmile Order Placed</fullName>
+                <fullName>IDB</fullName>
                 <default>false</default>
-                <label>uSmile Order Placed</label>
-            </value>
-            <value>
-                <fullName>Account Settings</fullName>
-                <default>false</default>
-                <label>Account Settings</label>
-            </value>
-            <value>
-                <fullName>SmartRx Forms</fullName>
-                <default>false</default>
-                <label>SmartRx Forms</label>
+                <label>IDB</label>
             </value>
             <value>
                 <fullName>Integrations</fullName>
@@ -54,9 +39,58 @@
                 <label>Integrations</label>
             </value>
             <value>
+                <fullName>Ordering</fullName>
+                <default>false</default>
+                <label>Ordering</label>
+            </value>
+            <value>
                 <fullName>Refinement</fullName>
                 <default>false</default>
                 <label>Refinement</label>
+            </value>
+            <value>
+                <fullName>SmartRx Forms</fullName>
+                <default>false</default>
+                <label>SmartRx Forms</label>
+            </value>
+            <value>
+                <fullName>Tx Planning Tools</fullName>
+                <default>false</default>
+                <label>Tx Planning Tools</label>
+            </value>
+            <value>
+                <fullName>uAssist</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uAssist</label>
+            </value>
+            <value>
+                <fullName>uAssist Case Review</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uAssist Case Review</label>
+            </value>
+            <value>
+                <fullName>uAssist First Case</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uAssist First Case</label>
+            </value>
+            <value>
+                <fullName>uAssist Submission/Modification Request</fullName>
+                <default>false</default>
+                <label>uAssist Submission/Modification Request</label>
+            </value>
+            <value>
+                <fullName>User Management</fullName>
+                <default>false</default>
+                <label>User Management</label>
+            </value>
+            <value>
+                <fullName>uSmile Order Placed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>uSmile Order Placed</label>
             </value>
         </valueSetDefinition>
     </valueSet>

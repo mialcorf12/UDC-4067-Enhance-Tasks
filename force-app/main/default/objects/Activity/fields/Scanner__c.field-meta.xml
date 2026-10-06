@@ -2,17 +2,41 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Scanner__c</fullName>
     <label>Scanner</label>
+    <required>false</required>
     <type>Picklist</type>
     <valueSet>
-        <restricted>false</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value><fullName>Alliedstar</fullName><label>Alliedstar</label><default>false</default></value>
-            <value><fullName>Medit</fullName><label>Medit</label><default>false</default></value>
-            <value><fullName>3Shape</fullName><label>3Shape</label><default>false</default></value>
-            <value><fullName>iTero</fullName><label>iTero</label><default>false</default></value>
-            <value><fullName>Shining</fullName><label>Shining</label><default>false</default></value>
-            <value><fullName>Other</fullName><label>Other</label><default>false</default></value>
+            <value>
+                <fullName>Alliedstar</fullName>
+                <default>false</default>
+                <label>Alliedstar</label>
+            </value>
+            <value>
+                <fullName>Medit</fullName>
+                <default>false</default>
+                <label>Medit</label>
+            </value>
+            <value>
+                <fullName>3Shape</fullName>
+                <default>false</default>
+                <label>3Shape</label>
+            </value>
+            <value>
+                <fullName>iTero</fullName>
+                <default>false</default>
+                <label>iTero</label>
+            </value>
+            <value>
+                <fullName>Shining</fullName>
+                <default>false</default>
+                <label>Shining</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

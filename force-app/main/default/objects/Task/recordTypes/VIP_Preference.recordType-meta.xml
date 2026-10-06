@@ -4,4 +4,398 @@
     <active>true</active>
     <description>Completed by CSL to capture VIP preferences</description>
     <label>VIP Preference</label>
+    <picklistValues>
+        <picklist>Addtional_Feature__c</picklist>
+        <values>
+            <fullName>Account Settings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course Check</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refinement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SmartRx Forms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Review_Method__c</picklist>
+        <values>
+            <fullName>Combo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Communication_Preference__c</picklist>
+        <values>
+            <fullName>Carrier Pigeon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cell</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Text</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EasyRx__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engagement_Type__c</picklist>
+        <values>
+            <fullName>14 day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30 day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>90 day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Case review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Check-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Re-Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Advanced Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Initial Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule New Feature Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule RSM Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Case Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Onboarding%2FTraining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Preference Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Education Meeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Normal</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scanner__c</picklist>
+        <values>
+            <fullName>3Shape</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alliedstar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iTero</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scheduling_Options__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Case Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Check In</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule New Feature Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule RSM Visit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Case Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Onboarding%2FTraining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schedule VIP Preference Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Team Educational Meeting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Software_Version__c</picklist>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud 1%2E1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud 1%2E2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud 1%2E3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Earlier version</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>uDesign 9%2E1</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subject</picklist>
+        <values>
+            <fullName>VIP Preferences</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Method__c</picklist>
+        <values>
+            <fullName>Combo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Person</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Training_Type__c</picklist>
+        <values>
+            <fullName>Existing Account Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Account Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Meeting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
 </RecordType>
